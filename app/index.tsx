@@ -1,17 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
+
+import Card from "@/components/Card";
+
+const dataCard = require('@/assets/dataCard.json');
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <View style={styles.panel}>
-        <Text style={styles.textWhite}>Hello World!!</Text>
-      </View>
-      <View style={styles.panel}>
-        <View style={styles.lingkaran}>
-          <Text style={styles.textWhite}>MY</Text>
-        </View>
-      </View>
-      <Text style={styles.textWhite}>Hello World!!</Text>
+      <FlatList data={dataCard.posts} renderItem={({ item, index }) => <Card id={item.id} sumberGambar={item.sumberGambar} judul={item.judul} keterangan={item.keterangan} />} />
     </View>
   );
 }
@@ -21,8 +17,8 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   panel: {
-    backgroundColor: "#2529e",
-    padding: 24,
+    backgroundColor: "#25292e",
+    padding: 16,
     borderRadius: 16,
     marginBottom: 16,
     flexDirection: "row",
@@ -36,13 +32,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#fff",
   },
-  lingkaran: {
-    backgroundColor: "teal",
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    padding: 8,
-    alignItems: "center",
-    justifyContent: "center",
+  image: {
+    width: 80,
+    height: 60,
+    borderRadius: 5,
+    marginEnd: 24,
+  },
+  textWhiteKecil: {
+    fontSize: 12,
+    color: "#fff",
   },
 });
