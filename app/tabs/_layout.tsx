@@ -10,6 +10,12 @@ export default function TabLayout() {
           <FontAwesome name="home" size={18} color={color}/>
         )
       }} />
+      <Tabs.Screen name="users" options={{
+        title: 'Users',
+        tabBarIcon: ({ color }) =>(
+          <FontAwesome name="home" size={18} color={color}/>
+        )
+      }} />
       <Tabs.Screen name="index" options={{
         title: 'About',
         tabBarIcon: ({ color }) =>(
